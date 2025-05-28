@@ -1,3 +1,7 @@
+function string:endswith(suffix)
+    return self:sub(-#suffix) == suffix
+end
+
 require("config.lazy")
 require("nvim-cmp")
 
