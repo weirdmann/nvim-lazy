@@ -17,8 +17,12 @@ return {
   'L3MON4D3/LuaSnip',
   version = 'v2.*',
   build = 'make install_jsregexp',
-}, 
-
+},
+{ 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+config = function()
+require('lsp_lines').setup()
+end,
+},
 {
   'nvim-lualine/lualine.nvim',
   dependencies = {
@@ -66,6 +70,7 @@ end,
   "max397574/better-escape.nvim",
   config = function()
     require("better_escape").setup({
+      default_mappings = false,
       mappings = {
     -- i for insert, other modes are the first letter too
     i = {
@@ -73,16 +78,12 @@ end,
         k = {
             j = "<Esc>",
         },
-        -- map jk and jj  to exit insert mode
+        -- map jk to exit insert mode
         j = {
             k = "<Esc>",
-            j = "<Esc>",
         },
-        -- disable jj
-        j = {
-            j = false,
-        },
-    }
+    },
+    v = {}
 }
     })
   end,
