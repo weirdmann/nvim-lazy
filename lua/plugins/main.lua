@@ -1,14 +1,14 @@
+
 return {
   "folke/neodev.nvim",
   "folke/which-key.nvim",
-  "folke/neoconf.nvim", 
+  "folke/neoconf.nvim",
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
       dependencies = { 'nvim-lua/plenary.nvim' }
   },
   'mbbill/undotree',
   'catppuccin/nvim',
-  {'nvim-tree/nvim-tree.lua', dependencies={'nvim-tree/nvim-web-devicons'}},
  {
   'stevearc/dressing.nvim',
 },
@@ -66,28 +66,6 @@ local lsp_zero = require('lsp-zero')
 end,
 },
 
-{
-  "max397574/better-escape.nvim",
-  config = function()
-    require("better_escape").setup({
-      default_mappings = false,
-      mappings = {
-    -- i for insert, other modes are the first letter too
-    i = {
-        -- map kj to exit insert mode
-        k = {
-            j = "<Esc>",
-        },
-        -- map jk to exit insert mode
-        j = {
-            k = "<Esc>",
-        },
-    },
-    v = {}
-}
-    })
-  end,
-},
 {
   'cameron-wags/rainbow_csv.nvim',
   config = function()
